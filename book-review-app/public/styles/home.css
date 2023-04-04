@@ -1,0 +1,268 @@
+.hero {
+    padding: 0;
+    background-image: url("../images/background.jpg");
+}
+
+#featured-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-top: 5em;
+    justify-content: right;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 1vh;
+
+}
+
+#featured-container .featured-section {
+    display: inline-block;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    top: 20%;
+    text-align: center;
+    width: 30%;
+    height: 500px;
+}
+
+#featured-container > img {
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 60%;
+    margin-left: auto;
+    padding-left: auto;
+}
+
+.featured-section h2 {
+    color: #ffffff;
+    font-size: 300%;
+    font-size: 55px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3);
+    font-family: "Agency FB";
+}
+
+.featured-section h3 {
+    color: #ffffff;
+    font-size: 600%;
+    line-height: 1;
+    font-weight: 700;
+    text-align: center;
+
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: 0 0px 10px #555;
+    font-family: "Agency FB";
+}
+
+#home-page {
+    position: relative;
+    margin: auto;
+    margin-top: 10vh;
+    background-color: rgba(245, 245, 245, 0.742);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border-radius: 3px;
+
+    width: 95%;
+    height: fit-content;
+}
+
+#home-page h1 {
+    padding: 40px;
+    color: #cf347f;
+    text-align: center;
+    font-weight: 700;
+    font-size: 5rem;
+    line-height: 1;
+    font-family: "Agency FB";
+}
+
+.featured-books {
+    position: relative;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+
+article.featured-book-info {
+    width: 100%;
+    position: relative;
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    border-bottom: 5px solid #cf347f;
+}
+
+img.featured-img-thumbnail {
+    padding: 0;
+    position: relative;
+    object-fit: cover;
+    height: 250px;
+    margin: 0;
+}
+
+.body-wrap {
+    position: relative;
+    display: block;
+}
+
+.body-wrap h3 {
+    font-size: 2.2rem;
+    position: relative;
+    margin: auto;
+    font-weight: 700;
+    color: #555;
+    transition: all 0.4s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.body-wrap .rating {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    unicode-bidi: bidi-override;
+    text-align: center;
+    direction: rtl;
+
+}
+
+.rating span {
+    display: flex;
+    font-size: 1.8rem;
+
+    flex-grow: 0;
+}
+
+.rating span:before {
+    content: "\2605";
+    position: absolute;
+    color: gold;
+}
+
+.details-btn {
+    position: relative;
+    display: flex;
+    background: #cfcf64;
+    height: 50px;
+    border-radius: 3px;
+    color: #555;
+    font-size: 1.4rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 800;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: 0.4s;
+    width: 140px;
+    margin: auto;
+}
+
+.btn.details-btn:hover {
+    color: white;
+    background-color: #959595;
+}
+
+.no-articles {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 60px;
+    font-family: "Agency FB";
+}
+
+@media only screen and (max-width: 1024px) {
+    article .body-wrap h3 {
+        font-size: 1.4rem;
+    }
+
+    .details-btn {
+        width: 90px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .rating span {
+        display: flex;
+        font-size: 1.4rem;
+        padding: 0.5px;
+        flex-grow: 0;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #home-page h1 {
+        padding: 30px;
+        font-size: 4em;
+    }
+
+    .featured-books {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .featured-book-info {
+        margin-bottom: 20px;
+    }
+
+    img.featured-img-thumbnail {
+        width: 100%;
+    }
+
+    .body-wrap h3 {
+        font-size: 1.7rem;
+    }
+
+    .details-btn {
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .rating {
+        padding: 5px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    #home-page h1 {
+        padding: 30px;
+        font-size: 3em;
+    }
+
+    #featured-container #home-page {
+        width: 100%;
+    }
+
+    article.featured-book-info {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: auto;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    img.featured-img-thumbnail {
+        width: 100%;
+    }
+
+    .details-btn {
+        width: 120px;
+        height: 40px;
+    }
+}

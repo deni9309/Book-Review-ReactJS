@@ -1,0 +1,27 @@
+{
+    "books": {
+        "d953e5fb-a585-4d6b-92d3-ee90697398a0": {
+            "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+            "author": "J.K.Rowling",
+            "title": "Harry Potter and the Philosopher's Stone",
+            "imageUrl": "/images/HarryPotterAndThePhilosophersStone.jpg",
+            "genre": "Fantasy",
+            "publisher": "Bloomsbury",
+            "summary": "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter is a wizard, and he has a place at Hogwarts School of Witchcraft and Wizardry. An incredible adventure is about to begin!",
+            "price": 14.56,
+            "_createdOn": 1617194210928
+        },
+        "d953e5fb-a585-4d6b-92d3-ee90697398a1": {
+            "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+            "author": "Steven King",
+            "title": "It",
+            "imageUrl": "/images/It.jpg",
+            "genre": "Horror",
+            "publisher": "Scribner",
+            "summary": "Welcome to Derry, Maine. It's a small city, a place as hauntingly familiar as your own hometown. Only in Derry the haunting is real. They were seven teenagers when they first stumbled upon the horror.Now they are grown- up men and women who have gone out into the big world to gain success and happiness.But the promise they made twenty- eight years ago calls them reunite in the same place where, as teenagers, they battled an evil creature that preyed on the city's children. Now, children are being murdered again and their repressed memories of that terrifying summer return as they prepare to once again battle the monster lurking in Derry's sewers.",
+            "price": 16.99,
+            "_createdOn": 1617194295474
+        }
+    },
+    "comments": {}
+}

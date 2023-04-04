@@ -1,0 +1,110 @@
+body {
+    background-image: url('../images/book-background.jpg');
+    background-attachment: fixed;
+    background-color: rgba(252, 252, 252, 0.6);
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-blend-mode: color-dodge;
+    margin: 0;
+    padding: 0;
+}
+
+.auth {
+    width: 100px;
+    margin: 8em auto;
+}
+
+@media only screen and (max-width: 640px) {
+    header#header {
+        position: absolute;
+    }
+
+    header nav a.nav-link,
+    header h1 {
+        padding: 10px 5px;
+        font-size: 1rem;
+    }
+}
+
+
+header,
+footer {
+    background-color: #29303c;
+    width: 100%;
+    overflow: hidden;
+    color: whitesmoke;
+}
+
+.home {
+    font-size: auto;
+    transition: all 400ms linear;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 1;
+    height: fit-content;
+}
+
+header h1 {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    color: whitesmoke;
+}
+
+header nav {
+    display: inline-flex;
+    font-size: 1.1rem;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+footer#footer {
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    left: 0;
+    height: 2.5rem;
+}
+
+nav a.nav-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: stretch;
+    background-color: #959595;
+    padding: 20px 10px;
+    height: 100%;
+    transition: all 400ms linear;
+}
+
+nav a:hover {
+    cursor: pointer;
+    color: #cfcf64;
+    background-color: black;
+    transition: all 400ms linear;
+}
+
+.home:hover {
+    color: #cfcf64;
+}
+
+#user,
+#guest {
+    margin: 0;
+    padding: 0;
+}
