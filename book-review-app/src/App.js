@@ -23,7 +23,7 @@ function App() {
     return (
         <AuthProvider>
             <BookProvider>
-                <div id="box">
+             
                     <Header />
                     <main id="main-content">
                         <Routes>
@@ -53,7 +53,7 @@ function App() {
                         </Routes>
                     </main>
                     <Footer />
-                </div>
+              
             </BookProvider>
         </AuthProvider>
     );

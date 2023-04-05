@@ -120,7 +120,7 @@ export const BookDetails = () => {
 
                 {isOwner && (
                     <div className="buttons">
-                        <Link to={`/catalog/${book._id}/edit`} className="button">Edit</Link>
+                        <Link to={`/catalog/${book._id}/edit`} className="button"><i className="fa-thin fa-file-pen"></i> Edit</Link>
                         <button onClick={onDeleteClick} className="button">Delete</button>
                     </div>
                 )}

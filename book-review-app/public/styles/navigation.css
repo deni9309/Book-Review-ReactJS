@@ -7,43 +7,19 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-blend-mode: color-dodge;
-    margin: 0;
-    padding: 0;
 }
-
-.auth {
-    width: 100px;
-    margin: 8em auto;
-}
-
-@media only screen and (max-width: 640px) {
-    header#header {
-        position: absolute;
-    }
-
-    header nav a.nav-link,
-    header h1 {
-        padding: 10px 5px;
-        font-size: 1rem;
-    }
-}
-
 
 header,
 footer {
+    font-family: "Agency FB";
     background-color: #29303c;
     width: 100%;
     overflow: hidden;
     color: whitesmoke;
-}
-
-.home {
-    font-size: auto;
-    transition: all 400ms linear;
+    position: relative;
 }
 
 header {
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -54,6 +30,7 @@ header {
     flex-wrap: wrap;
     z-index: 1;
     height: fit-content;
+    margin-bottom: auto;
 }
 
 header h1 {
@@ -67,44 +44,63 @@ header h1 {
 
 header nav {
     display: inline-flex;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     flex-shrink: 1;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-footer#footer {
-    position: fixed;
+footer {
     padding: 10px 10px 0px 10px;
     bottom: 0;
     left: 0;
     height: 2.5rem;
+    width: 100%;
+    margin-bottom: 0;
 }
 
-nav a.nav-link {
+nav a.nav-link,
+nav span.nav-link.msg {
     display: inline-flex;
     justify-content: center;
     align-items: stretch;
-    background-color: #959595;
+    background-color: #959595b3;
     padding: 20px 10px;
-    height: 100%;
     transition: all 400ms linear;
+}
+
+span.nav-link.msg {
+    background-color: #1b2028;
 }
 
 nav a:hover {
     cursor: pointer;
     color: #cfcf64;
-    background-color: black;
-    transition: all 400ms linear;
+    background-color: #1b2028;
+    transition: all 300ms linear;
+}
+
+.home {
+    font-size: 2.8rem;
+    transition: all 300ms linear;
 }
 
 .home:hover {
     color: #cfcf64;
 }
 
-#user,
-#guest {
-    margin: 0;
-    padding: 0;
+@media only screen and (max-width: 640px) {
+    #root header nav {
+        flex-direction: column;
+        align-items: stretch;
+        font-size: 1rem;
+    }
+
+    #root a.nav-link,
+    #root span.nav-link.msg {
+        padding: 2px 6px;
+        margin: 1px;
+        display: block;
+    }
 }

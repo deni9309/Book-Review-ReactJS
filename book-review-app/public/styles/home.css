@@ -5,61 +5,52 @@
 
 #featured-container {
     width: 100%;
-    padding-right: 15px;
     padding-top: 5em;
-    justify-content: right;
     position: relative;
     box-sizing: border-box;
     text-align: center;
-    margin-top: 1vh;
-
+    margin-bottom: 2rem;
 }
 
 #featured-container .featured-section {
-    display: inline-block;
+    display: block;
     z-index: 999;
     margin: 0 auto;
-    left: 0;
-    top: 20%;
     text-align: center;
-    width: 30%;
-    height: 500px;
-}
-
-#featured-container > img {
-    height: auto;
-    display: inline-block;
-    vertical-align: middle;
-    max-width: 60%;
-    margin-left: auto;
-    padding-left: auto;
+    height: 400px;
 }
 
 .featured-section h2 {
     color: #ffffff;
-    font-size: 300%;
-    font-size: 55px;
-    line-height: 1;
+    font-size: 8rem;
+    line-height: 1.2;
     font-weight: 700;
-    letter-spacing: normal;
-    word-spacing: normal;
+    text-align: left;
+    text-decoration-line: overline;
+    text-decoration-color: #cf347fbb;
     text-transform: uppercase;
-    text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3);
+    font-weight: 900;
+    text-shadow: 0 0px 10px #555;
     font-family: "Agency FB";
+    padding: 0;
+    margin-bottom: 0%;
+    width: 300px;
 }
 
 .featured-section h3 {
-    color: #ffffff;
-    font-size: 600%;
-    line-height: 1;
-    font-weight: 700;
+    color: #333333;
+    padding-top: 3px;
+    font-size: 3rem;
+    font-weight: 100;
     text-align: center;
-
     text-transform: uppercase;
-    font-weight: 700;
-    text-shadow: 0 0px 10px #555;
+    line-height: 0.9;
     font-family: "Agency FB";
+    background-color: #cfcf64a4;
+    width: 50%;
+    box-shadow: 0 0px 10px #555;
 }
+
 
 #home-page {
     position: relative;
@@ -69,23 +60,28 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     border-radius: 3px;
-
-    width: 95%;
+    width: 90%;
     height: fit-content;
+    padding-bottom: 2rem;
 }
 
 #home-page h1 {
-    padding: 40px;
+    position: relative;
+    display: inline-block;
+    padding-top: 30px;
+    padding-bottom: 30px;
     color: #cf347f;
     text-align: center;
-    font-weight: 700;
-    font-size: 5rem;
+    font-weight: 200;
+    font-size: 4rem;
     line-height: 1;
     font-family: "Agency FB";
+    border-bottom: 2px solid #cfcf64;
 }
 
 .featured-books {
     position: relative;
+    padding-top: 40px;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -187,7 +183,7 @@ img.featured-img-thumbnail {
     font-family: "Agency FB";
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1025px) {
     article .body-wrap h3 {
         font-size: 1.4rem;
     }
@@ -207,6 +203,22 @@ img.featured-img-thumbnail {
 }
 
 @media only screen and (max-width: 900px) {
+    #featured-container{
+        padding-top: 3rem;
+    }
+    
+    #featured-container .featured-section {
+        height: fit-content;
+    }
+
+    .featured-section h2 {
+        font-size: 6rem;
+    }
+
+    .featured-section h3 {
+        font-size: 2rem;
+    }
+
     #home-page h1 {
         padding: 30px;
         font-size: 4em;
@@ -217,11 +229,12 @@ img.featured-img-thumbnail {
     }
 
     .featured-book-info {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     img.featured-img-thumbnail {
-        width: 100%;
+        width: 40%;
+        object-fit: contain;
     }
 
     .body-wrap h3 {
@@ -239,13 +252,29 @@ img.featured-img-thumbnail {
 }
 
 @media only screen and (max-width: 640px) {
-    #home-page h1 {
-        padding: 30px;
-        font-size: 3em;
+    #featured-container {
+            padding-top: 4rem;
+        }
+   
+    #featured-container .featured-section {
+        height: fit-content;
+    }
+
+    .featured-section h2 {
+        font-size: 4rem;
+    }
+
+    .featured-section h3 {
+        font-size: 1.8rem;
     }
 
     #featured-container #home-page {
         width: 100%;
+    }
+
+    #home-page h1 {
+        padding: 30px;
+        font-size: 3em;
     }
 
     article.featured-book-info {
@@ -254,7 +283,7 @@ img.featured-img-thumbnail {
         flex-wrap: wrap;
         margin: auto;
         position: relative;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     img.featured-img-thumbnail {

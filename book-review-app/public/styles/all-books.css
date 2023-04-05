@@ -1,7 +1,6 @@
 #catalog-page {
     position: relative;
-    margin: auto;
-    margin-top: 10vh;
+    margin: 2rem auto;
     background-color: rgba(245, 245, 245, 0.742);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     overflow: hidden;
@@ -9,16 +8,22 @@
     padding: 20px;
     width: 90%;
     height: fit-content;
+    padding-bottom: 2rem;
+    text-align: center;
 }
 
 #catalog-page h1 {
     position: relative;
-    margin: 20px auto;
-    font-weight: 700;
-    font-size: 3rem;
+    display: inline-block;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #cf347f;
     text-align: center;
-    color: #555;
-    border-bottom: #cfcf64 2px solid;
+    font-weight: 200;
+    font-size: 4rem;
+    line-height: 1;
+    font-family: "Agency FB";
+    border-bottom: 2px solid #cfcf64;
 }
 
 .allBooks {
@@ -88,11 +93,14 @@
     color: white;
     background-color: #959595;
 }
+
 @media only screen and (max-width: 900px) {
 
-.allBooks{
-grid-template-columns: repeat(2, 1fr)
-}}
+    .allBooks {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
 @media only screen and (max-width: 640px) {
     #catalog-page {
         padding: 10px;
@@ -113,7 +121,7 @@ grid-template-columns: repeat(2, 1fr)
     }
 
     #catalog-page h1 {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
         line-height: 1;
     }
 }

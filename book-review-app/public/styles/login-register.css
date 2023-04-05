@@ -15,6 +15,10 @@
     padding: 10px 40px;
 }
 
+.auth {
+    margin: 4em auto;
+}
+
 .container > h1 {
     margin-top: 15px;
     font-weight: 700;

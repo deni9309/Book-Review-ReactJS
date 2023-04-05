@@ -9,20 +9,20 @@ export const Header = () => {
     return (
         <header id="header">
             <h1><Link className="home" to="/">Book Review</Link></h1>
-            {isAuthenticated && (<span>Hello, {email}!</span>)}
             <nav>
-                <Link className="nav-link" to="/catalog">All Books</Link>
+                {isAuthenticated && (<span className="nav-link msg">Hello, {email}!</span>)}
+                <Link className="nav-link" to="/catalog"><i className="fa fa-book-open"></i>All Books</Link>
                 {isAuthenticated && (
-                    <div id="user">
-                        <Link className="nav-link" to="/create-review">Create Book Review</Link>
-                        <Link className="nav-link" to="/logout">Logout</Link>
-                    </div>
+                    <>
+                        <Link className="nav-link" to="/create-review"><i className="fa-regular fa-square-plus"></i>Create Book Review</Link>
+                        <Link className="nav-link" to="/logout"><i className="fa-solid fa-arrow-right-from-bracket"></i>Logout</Link>
+                    </>
                 )}
                 {!isAuthenticated && (
-                    <div id="guest">
-                        <Link className="nav-link" to="/login">Login</Link>
-                        <Link className="nav-link" to="/register">Register</Link>
-                    </div>
+                    <>
+                        <Link className="nav-link" to="/login"><i className="fa-solid fa-arrow-right-to-bracket"></i>Login</Link>
+                        <Link className="nav-link" to="/register"><i className="fa-solid fa-user-plus"></i>Register</Link>
+                    </>
                 )}
             </nav>
         </header>
