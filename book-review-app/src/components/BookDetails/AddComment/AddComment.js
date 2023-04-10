@@ -9,15 +9,15 @@ export const AddComment = ({
 
     return (
         <article className="create-comment">
-            <label>Add new comment:</label>
             <form className="form" onSubmit={onSubmit}>
                 <textarea
+                    className="comment"
                     name="comment"
-                    placeholder="Comment......"
+                    placeholder="Write your comment here..."
                     value={values.comment}
                     onChange={changeHandler}>
                 </textarea>
-                    <input className="btn submit" type="submit" value="Add Comment" />
+                    <input className="submit-button" type="submit" value="Add Comment" />
             </form>
         </article>
     );

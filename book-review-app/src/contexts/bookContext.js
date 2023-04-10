@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext, useContext } from "react";
+import { useState, useEffect, createContext, useContext, useCallback } from "react";
 import { useNavigate } from 'react-router-dom';
 
 import { bookServiceFactory } from '../services/bookService';
@@ -10,13 +10,28 @@ export const BookProvider = ({
 }) => {
     const navigate = useNavigate();
     const [books, setBooks] = useState([]);
+    const [latestBooks, setLatestBooks] = useState([]);
     const bookService = bookServiceFactory();  //auth.accessToken
 
     useEffect(() => {
         bookService.getAll()
             .then(result => {
                 setBooks(result);
-            })
+            });
+    }, []);
+
+    useEffect(() => {
+        bookService.getLatest()
+            .then(result => {
+                setLatestBooks(result.map(x => ({ ...x, rating: 0 })));
+            });
+    }, [books]);
+
+    const onLikeClick = useCallback((bookId) => {
+        setLatestBooks(state => state.map(x => x._id === bookId
+            ? { ...x, rating: x.rating < 5 ? x.rating + 1 : x.rating }
+            : x
+        ));
     }, []);
 
     const getBook = (bookId) => {
@@ -45,6 +60,8 @@ export const BookProvider = ({
 
     const contextValues = {
         books,
+        latestBooks,
+        onLikeClick,
         getBook,
         onCreateBookSubmit,
         onBookEditSubmit,

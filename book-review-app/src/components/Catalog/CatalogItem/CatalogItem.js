@@ -11,7 +11,7 @@ export const CatalogItem = ({
             <img src={imageUrl} />
             <h2>{title}</h2>
             <h3>{author}</h3>
-            <Link to={`/catalog/${_id}`} className="details-button">Details</Link>
+            <Link to={`/catalog/${_id}`} className="details-button"><i className="fa-solid fa-circle-info fa-sm"></i>Details</Link>
         </div>
     );
 };

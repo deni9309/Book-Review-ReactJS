@@ -11,11 +11,10 @@ export const Catalog = () => {
                 {books.map(x =>
                     <CatalogItem key={x._id} {...x} />
                 )}
-
-                {books.length === 0 && (
-                    <h3 className="no-articles">No articles yet</h3>
-                )}
             </div>
+            {books.length === 0 && (
+                <p className="no-results">No book reviews yet.</p>
+            )}
         </section>
     );
 };

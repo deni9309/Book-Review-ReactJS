@@ -17,6 +17,7 @@ footer {
     overflow: hidden;
     color: whitesmoke;
     position: relative;
+    transition: all 0.4s linear;
 }
 
 header {
@@ -44,6 +45,7 @@ header h1 {
 
 header nav {
     display: inline-flex;
+    gap: 2px;
     font-size: 1.2rem;
     flex-shrink: 1;
     flex-wrap: wrap;
@@ -60,6 +62,10 @@ footer {
     margin-bottom: 0;
 }
 
+nav a.nav-link {
+    border-left: 3px solid #cfcf64;
+}
+
 nav a.nav-link,
 nav span.nav-link.msg {
     display: inline-flex;
@@ -70,7 +76,7 @@ nav span.nav-link.msg {
     transition: all 400ms linear;
 }
 
-span.nav-link.msg {
+nav span.nav-link.msg {
     background-color: #1b2028;
 }
 

@@ -10,6 +10,7 @@
     height: fit-content;
     padding-bottom: 2rem;
     text-align: center;
+    transition: all 0.4s linear;
 }
 
 #catalog-page h1 {
@@ -59,39 +60,45 @@
 .allBooks-info > h2,
 .allBooks-info > h3 {
     text-align: center;
-    font-weight: 700;
-    color: #929292;
-    padding: 10px 0;
+    font-weight: 400;
+    width: 90%;
 }
 
 .allBooks-info > h2 {
-    width: 100%;
     color: #555;
+    margin-top: 5px;
+    font-size: 1.8rem;
     border-bottom: #cfcf64 1px solid;
+}
 
+.allBooks-info > h3 {
+    color: #554455;
+    font-size: 1.4rem;
 }
 
 .details-button {
     position: relative;
     display: flex;
     margin: 20px auto;
-    background: #cfcf64;
-    height: 60px;
+    height: 40px;
     border-radius: 3px;
+    border: 0;
     color: #555;
-    font-size: 1.4rem;
+    background: #cfcf64;
+    font-size: 1.3rem;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-weight: 800;
+    font-weight: 500;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    transition: 0.4s;
-    width: 140px;
+    transition: all 0.4s linear;
+    width: 120px;
+    font-family: "Agency FB";
 }
 
 .details-button:hover {
     color: white;
-    background-color: #959595;
+    background-color: #8b8b44;
 }
 
 @media only screen and (max-width: 900px) {

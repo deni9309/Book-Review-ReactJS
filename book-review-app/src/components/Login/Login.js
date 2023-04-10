@@ -42,7 +42,7 @@ export const Login = () => {    // {auth} ->pass it as props for using hoc
                     />
                     <input type="submit" className="btn submit" value="Login" />
                     <p className="field">
-                        <span>If you don't have profile click <Link to="/register">here</Link></span>
+                        <span>If you don't have profile click <Link to="/register"><strong>HERE</strong></Link></span>
                     </p>
                 </div>
             </form>

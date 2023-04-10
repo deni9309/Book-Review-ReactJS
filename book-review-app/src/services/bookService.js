@@ -12,6 +12,15 @@ export const bookServiceFactory = (token) => {
         return books;
     };
 
+    const getLatest = async () => {
+        const sortQuery = encodeURIComponent(`_createdOn desc`);
+
+        const result = await request.get(`${baseUrl}?sortBy=${sortQuery}`);
+        const latestBooks = Object.values(result);
+
+        return latestBooks;
+    };
+
     const getOne = async (bookId) => {
         const result = await request.get(`${baseUrl}/${bookId}`);
 
@@ -30,6 +39,7 @@ export const bookServiceFactory = (token) => {
 
     return {
         getAll,
+        getLatest,
         getOne,
         create,
         edit,

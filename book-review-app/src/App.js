@@ -15,11 +15,8 @@ import { BookDetails } from './components/BookDetails/BookDetails';
 import { EditGame } from './components/EditBook/EditBook';
 import { RouteGuard } from './components/common/RouteGuard';
 import { BookOwnership } from './components/common/BookOwnership';
-//import { withAuth } from './hoc/withAuth';
 
 function App() {
-
-    // const EnhancedLogin = withAuth(Login); //using hoc
     return (
         <AuthProvider>
             <BookProvider>
@@ -42,14 +39,7 @@ function App() {
                                 } />
                                 <Route path='/create-review' element={<CreateBook />} />
                                 <Route path='/logout' element={<Logout />} />
-                            </Route>
-
-                            {/* RouteGuard working with {children}
-                        <Route path='/create-book' element={
-                            <RouteGuard>
-                                <CreateBook onCreateBookSubmit={onCreateBookSubmit} />
-                            </RouteGuard>
-                        } /> */}
+                            </Route>                      
                         </Routes>
                     </main>
                     <Footer />

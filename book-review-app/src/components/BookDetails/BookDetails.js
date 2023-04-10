@@ -48,7 +48,7 @@ export const BookDetails = () => {
                 payload: bookState
             });
         });
-    }, [bookId]);
+    }, [bookService, bookId]);
 
     const onCommentSubmit = async (values) => {
         const response = await commentService.create(bookId, values.comment);
@@ -90,41 +90,55 @@ export const BookDetails = () => {
     return (
         <section id="book-details">
             <h1>Book Details</h1>
-            <div className="info-section">
+            <article className="details">
+                <img className="book-img" alt={book.title} src={book.imageUrl} />
+                <div className="book-info">
+                    <h2>{book.title}</h2>
 
-                <article>
-                    <div className="book-header">
-                        <img className="book-img" src={book.imageUrl} />
-                        <h1>{book.title}</h1>
-                        <p className="label">Author: <span className="info">{book.author}</span></p>
-                        <p className="label">Genre: <span className="info">{book.genre}</span></p>
-                        <p className="label">Publisher: <span className="info">{book.publisher}</span></p>
-                        <p className="label">Price: <span className="info price">{book.price}</span></p>
+                    <div className="info-group">
+                        <p className="label">Author: </p>
+                        <p className="info">{book.author}</p>
                     </div>
-                    <p className="text book-summary">{book.summary}</p>
-                </article>
-                <div className="details-comments">
+                    <div className="info-group">
+                        <p className="label">Genre: </p>
+                        <p className="info">{book.genre}</p>
+                    </div>
+                    <div className="info-group">
+                        <p className="label">Publisher: </p>
+                        <p className="info">{book.publisher}</p>
+                    </div>
+                    <div className="info-group">
+                        <p className="label">Price: </p>
+                        <p className="info price">${book.price}</p>
+                    </div>
+                </div>
+                <div className="info-group">
+                    <p className="book-summary">{book.summary}</p>
+                </div>
+                {isOwner && (
+                    <div className="buttons">
+                        <Link to={`/catalog/${book._id}/edit`} className="edit-button"><i className="fa fa-file-pen fa-sm"></i>Edit</Link>
+                        <button onClick={onDeleteClick} className="delete-button"><i className="fa fa-trash-alt fa-sm"></i>Delete</button>
+                    </div>
+                )}
+            </article>
+
+            <article>
+                <div className="comments-info">
                     <h2>Comments:</h2>
-                    <ul>
+                    <ul className="details-comments">
                         {book.comments && book.comments.map(x => (
                             <li key={x._id} className="comment">
-                                <p>{x.author.email}: {x.comment}</p>
+                                <p className="author">{x.author.email}</p>
+                                <p className="post">{x.comment}</p>
                             </li>
                         ))}
                     </ul>
-
                     {!book.comments?.length && (
-                        <p className="no-comment">No comments.</p>
-                    )}
+                        <p className="no-comments">No comments.</p>
+                    )}        
                 </div>
-
-                {isOwner && (
-                    <div className="buttons">
-                        <Link to={`/catalog/${book._id}/edit`} className="button"><i className="fa-thin fa-file-pen"></i> Edit</Link>
-                        <button onClick={onDeleteClick} className="button">Delete</button>
-                    </div>
-                )}
-            </div>
+            </article>
             {isAuthenticated && <AddComment onCommentSubmit={onCommentSubmit} />}
         </section>
     );
