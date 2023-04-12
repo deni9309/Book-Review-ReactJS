@@ -69,7 +69,7 @@
     position: relative;
     display: inline-block;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 5px;
     color: #cf347f;
     text-align: center;
     font-weight: 200;
@@ -238,7 +238,6 @@ p.no-results {
     }
 
     #home-page h1 {
-        padding: 30px;
         font-size: 4em;
     }
 
@@ -291,7 +290,7 @@ p.no-results {
     }
 
     #home-page h1 {
-        padding: 30px;
+        padding-bottom: 5px;
         font-size: 3em;
     }
 

@@ -1,4 +1,5 @@
 import { useBookContext } from "../../contexts/bookContext";
+import { Search } from "../Search/Search";
 import { CatalogItem } from "./CatalogItem/CatalogItem";
 
 export const Catalog = () => {
@@ -7,6 +8,7 @@ export const Catalog = () => {
     return (
         <section id="catalog-page">
             <h1>All Book Reviews</h1>
+            <Search />
             <div className="allBooks">
                 {books.map(x =>
                     <CatalogItem key={x._id} {...x} />

@@ -1,0 +1,110 @@
+.search-form {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: "Agency FB";
+    font-size: 1.2rem;
+    color: #555;
+    background-color: #55555564;
+    border-radius: 3px;
+    padding-bottom: 10px;
+    width: fit-content;
+    margin-bottom: 0;
+}
+
+.search-input-container i {
+    color: #1f1f1f5e;
+}
+
+.search-input-container,
+.filter {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-input-container button {
+    width: 29px;
+    height: 40px;
+    margin: 0px;
+    padding-top: 4px;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    background-color: #ffffff59;
+}
+
+button.search-btn {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+button.close-btn:hover,
+button.search-btn:hover {
+    background-color: #efefef;
+}
+
+form.search-form input {
+    width: 250px;
+    height: 40px;
+    align-self: center;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.filter select {
+    cursor: pointer;
+    border: 0;
+    padding-left: 5px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    font-family: "Agency FB";
+    font-size: 1.2rem;
+    align-self: center;
+    height: 40px;
+    width: 110px;
+    color: #555;
+}
+
+.filter select option {
+    cursor: pointer;
+}
+
+.filter select option:nth-of-type(2n) {
+    background-color: #eee;
+}
+
+.filter > span {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    padding: 0 10px;
+    height: 40px;
+    width: max-content;
+    background-color: #ffffff59;
+}
+
+@media only screen and (max-width: 640px) {
+    form.search-form {
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-bottom: 5px;
+        width: 95%;
+    }
+
+    form.search-form .search-input-container {
+        margin: 20px auto;
+        margin-bottom: 10px;
+    }
+
+    form .filter {
+        margin-top: 0;
+    }
+}
