@@ -11,6 +11,7 @@
     padding-bottom: 2rem;
     text-align: center;
     transition: all 0.4s linear;
+    font-family: "Agency FB";
 }
 
 #catalog-page h1 {
@@ -24,7 +25,6 @@
     font-weight: 200;
     font-size: 4rem;
     line-height: 1;
-    font-family: "Agency FB";
     border-bottom: 2px solid #cfcf64;
 }
 
@@ -72,12 +72,20 @@
     color: #555;
     margin-top: 5px;
     font-size: 1.8rem;
-    border-bottom: #cfcf64 1px solid;
+    border-bottom: #cfcf64 2px solid;
 }
 
 .allBooks-info > h3 {
     color: #554455;
     font-size: 1.4rem;
+    background-color: #ddd;
+    padding: 5px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+p.book-genre{
+color: #cf347f;
 }
 
 .details-button {
