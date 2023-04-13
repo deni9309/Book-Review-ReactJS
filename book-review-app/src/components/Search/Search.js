@@ -30,7 +30,7 @@ export const Search = () => {
     }
 
     return (
-        <form className="search-form" onSubmit={onSearchSubmit}>
+        <form id="search-form" className="search-form" onSubmit={onSearchSubmit}>
             <div className="search-input-container">
                 <input
                     type="text"

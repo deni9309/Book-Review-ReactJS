@@ -1,7 +1,8 @@
 .search-form {
     position: relative;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    column-gap: 20px;
     align-items: center;
     font-family: "Agency FB";
     font-size: 1.2rem;
@@ -9,7 +10,7 @@
     background-color: #55555564;
     border-radius: 3px;
     padding-bottom: 10px;
-    width: fit-content;
+    max-width: 70%;
     margin-bottom: 0;
 }
 
@@ -47,7 +48,8 @@ button.search-btn:hover {
 }
 
 form.search-form input {
-    width: 250px;
+    min-width: 280px;
+    max-width: 90%;
     height: 40px;
     align-self: center;
     margin: 0;
@@ -91,12 +93,33 @@ form.search-form input {
     background-color: #ffffff59;
 }
 
-@media only screen and (max-width: 699px) {
-    form.search-form {
-        flex-direction: column;
+@media only screen and (max-width: 899px) {
+    form#search-form.search-form {
+        max-width: 87%;
         flex-wrap: wrap;
+    }
+
+    form.search-form {
+        padding-top: 20px;
+    }
+
+    form.search-form .filter,
+    .search-input-container {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width: 699px) {
+    form#search-form.search-form {
+        flex-direction: column;
+        max-width: 95%;
         margin-bottom: 5px;
-        width: 95%;
+        width: 100%;
+        padding-top: 0;
+    }
+
+    form#search-form input {
+        min-width: 260px;
     }
 
     form.search-form .search-input-container {
@@ -104,7 +127,7 @@ form.search-form input {
         margin-bottom: 10px;
     }
 
-    form .filter {
+    form.search-form div.filter {
         margin-top: 0;
     }
 }
