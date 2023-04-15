@@ -37,7 +37,7 @@ export const CreateBook = () => {
                     <input value={values.publisher} onChange={changeHandler} type="text" id="publisher" name="publisher" placeholder="Book publisher......" />
 
                     <label htmlFor="price">Price:</label>
-                    <input value={values.price} onChange={changeHandler} type="number" id="price" name="price" min={0.00} />
+                    <input value={values.price} onChange={changeHandler} type="number" id="price" name="price" min={0.00} step="any" />
 
                     <label htmlFor="summary">Summary:</label>
                     <textarea name="summary" id="summary" value={values.summary} onChange={changeHandler} ></textarea>

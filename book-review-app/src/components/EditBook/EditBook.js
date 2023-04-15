@@ -40,6 +40,7 @@ export const EditGame = () => {
                         name="title"
                         value={values.title}
                         onChange={changeHandler}
+                        required
                     />
                     <label htmlFor="author">Author:</label>
                     <input
@@ -48,6 +49,7 @@ export const EditGame = () => {
                         name="author"
                         value={values.author}
                         onChange={changeHandler}
+                        required
                     />
                     <label htmlFor="book-img">Image URL:</label>
                     <input
@@ -56,6 +58,7 @@ export const EditGame = () => {
                         name="imageUrl"
                         value={values.imageUrl}
                         onChange={changeHandler}
+                        required
                     />
                     <label htmlFor="genre">Genre:</label>
                     <input
@@ -64,6 +67,7 @@ export const EditGame = () => {
                         name="genre"
                         value={values.genre}
                         onChange={changeHandler}
+                        required
                     />
                     <label htmlFor="publisher">Publisher:</label>
                     <input
@@ -72,15 +76,18 @@ export const EditGame = () => {
                         name="publisher"
                         value={values.publisher}
                         onChange={changeHandler}
+                        required
                     />                  
                     <label htmlFor="price">Price:</label>
                     <input
                         type="number"
                         id="price"
                         name="price"
-                        min="0.00"
+                        min={0.00}
+                        step="any"
                         value={values.price}
                         onChange={changeHandler}
+                        required
                     />                 
                     <label htmlFor="summary">Summary:</label>
                     <textarea
@@ -88,6 +95,7 @@ export const EditGame = () => {
                         id="summary"
                         value={values.summary}
                         onChange={changeHandler}
+                        required
                     ></textarea>
                     <input className="btn submit" type="submit" defaultValue="Edit Book" />
                 </div>

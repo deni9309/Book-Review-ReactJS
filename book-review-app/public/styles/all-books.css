@@ -124,8 +124,12 @@ color: #cf347f;
     #catalog-page {
         padding: 10px;
         width: fit-content;
-        height: fit-content;
+       min-height: 80vh;
     }
+
+ #catalog-page p.no-results{
+    margin: 10%;
+ }
 
     .allBooks {
         grid-template-columns: repeat(1, 1fr);

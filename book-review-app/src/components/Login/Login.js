@@ -30,6 +30,7 @@ export const Login = () => {    // {auth} ->pass it as props for using hoc
                         value={values[LoginFormKeys.Email]}
                         placeholder="Sokka@gmail.com"
                         onChange={changeHandler}
+                        required
                     />
 
                     <label htmlFor="login-pass">Password:</label>
@@ -39,6 +40,7 @@ export const Login = () => {    // {auth} ->pass it as props for using hoc
                         name={LoginFormKeys.Password}
                         value={values[LoginFormKeys.Password]}
                         onChange={changeHandler}
+                        required
                     />
                     <input type="submit" className="btn submit" value="Login" />
                     <p className="field">

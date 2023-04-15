@@ -6,7 +6,7 @@ import { useForm } from "../../hooks/useForm";
 
 export const Register = () => {
     const { onRegisterSubmit } = useContext(AuthContext);
-    const { values, changeHandler, onSubmit } = useForm({
+    const { values, changeHandler, onSubmit, formErrors, formValidate } = useForm({
         email: '',
         password: '',
         confirmPassword: '',
@@ -25,6 +25,7 @@ export const Register = () => {
                         placeholder="maria@email.com"
                         value={values.email}
                         onChange={changeHandler}
+                        required
                     />
                     <label htmlFor="password">Password:</label>
                     <input
@@ -33,7 +34,13 @@ export const Register = () => {
                         id="password"
                         value={values.password}
                         onChange={changeHandler}
+                        onBlur={formValidate}
+                        required
                     />
+                    {formErrors.password &&
+                        <span className="form-error">{formErrors.password}</span>
+                    }
+
                     <label htmlFor="confirmPassword">Confirm Password:</label>
                     <input
                         type="password"
@@ -41,7 +48,13 @@ export const Register = () => {
                         id="confirmPassword"
                         value={values.confirmPassword}
                         onChange={changeHandler}
+                        onBlur={formValidate}
+                        required
                     />
+                    {formErrors.confirmPassword &&
+                        <span className="form-error">{formErrors.confirmPassword}</span>
+                    }
+
                     <input className="btn submit" type="submit" value="Register" />
                     <p className="field">
                         <span>If you already have an account click <Link to="/login"><strong>HERE</strong></Link></span>
