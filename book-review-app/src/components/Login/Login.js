@@ -2,18 +2,12 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/authContext";
 import { useForm } from "../../hooks/useForm";
 
-const LoginFormKeys = {
-    Email: 'email',
-    Password: 'password',
-};
-
-export const Login = () => {    // {auth} ->pass it as props for using hoc
-    // const { onLoginSubmit } = auth;
+export const Login = () => {    
 
     const { onLoginSubmit } = useAuthContext(); // using custom hook here (no need to import 'useContext')
-    const { values, changeHandler, onSubmit } = useForm({
-        [LoginFormKeys.Email]: '',
-        [LoginFormKeys.Password]: '',
+    const { values, changeHandler, onSubmit} = useForm({
+        email: '',
+        password: '',
     }, onLoginSubmit);
 
     return (
@@ -26,22 +20,23 @@ export const Login = () => {    // {auth} ->pass it as props for using hoc
                     <input
                         type="email"
                         id="email"
-                        name={LoginFormKeys.Email}
-                        value={values[LoginFormKeys.Email]}
-                        placeholder="Sokka@gmail.com"
+                        name="email"
+                        value={values.email}
+                        placeholder="example@email.com"
                         onChange={changeHandler}
                         required
                     />
 
-                    <label htmlFor="login-pass">Password:</label>
+                    <label htmlFor="loginPassword">Password:</label>
                     <input
                         type="password"
-                        id="login-password"
-                        name={LoginFormKeys.Password}
-                        value={values[LoginFormKeys.Password]}
-                        onChange={changeHandler}
+                        id="loginPassword"
+                        name="password"
+                        value={values.password}
+                        onChange={changeHandler}                     
                         required
                     />
+                  
                     <input type="submit" className="btn submit" value="Login" />
                     <p className="field">
                         <span>If you don't have profile click <Link to="/register"><strong>HERE</strong></Link></span>

@@ -10,7 +10,7 @@ export const EditGame = () => {
     const { bookId } = useParams();
     const bookService = useService(bookServiceFactory);
     const { onBookEditSubmit } = useBookContext();
-    const { values, changeHandler, onSubmit, changeValues } = useForm({
+    const { values, changeHandler, onSubmit, changeValues, formValidate } = useForm({
         _id: '',
         title: '',
         author: '',
@@ -36,21 +36,25 @@ export const EditGame = () => {
                     <label htmlFor="title">Title:</label>
                     <input
                         type="text"
+                        minLength={2}
                         id="title"
                         name="title"
                         value={values.title}
                         onChange={changeHandler}
+                        onBlur={formValidate}
                         required
-                    />
+                    />            
                     <label htmlFor="author">Author:</label>
                     <input
                         type="text"
+                        minLength={3}
                         id="author"
                         name="author"
                         value={values.author}
                         onChange={changeHandler}
+                        onBlur={formValidate}
                         required
-                    />
+                    />               
                     <label htmlFor="book-img">Image URL:</label>
                     <input
                         type="text"
@@ -64,6 +68,7 @@ export const EditGame = () => {
                     <input
                         type="text"
                         id="genre"
+                        minLength={3}
                         name="genre"
                         value={values.genre}
                         onChange={changeHandler}
@@ -97,6 +102,7 @@ export const EditGame = () => {
                         onChange={changeHandler}
                         required
                     ></textarea>
+
                     <input className="btn submit" type="submit" defaultValue="Edit Book" />
                 </div>
             </form>

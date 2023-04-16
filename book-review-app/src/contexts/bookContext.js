@@ -2,6 +2,7 @@ import { useState, useEffect, createContext, useContext, useCallback } from "rea
 import { useNavigate } from 'react-router-dom';
 
 import { bookServiceFactory } from '../services/bookService';
+import { useForm } from "../hooks/useForm";
 
 export const BookContext = createContext();
 
@@ -12,6 +13,7 @@ export const BookProvider = ({
     const [books, setBooks] = useState([]);
     const [latestBooks, setLatestBooks] = useState([]);
     const [filteredBooks, setFilteredBooks] = useState([]);
+    const { resetForm } = useForm();
     const bookService = bookServiceFactory();
 
     useEffect(() => {
@@ -41,27 +43,41 @@ export const BookProvider = ({
         return books.find(x => x._id === bookId);
     };
 
-    const onCreateBookSubmit = async (data) => {
-        const newBook = await bookService.create(data);
+    const onCreateBookSubmit = async (data, formErrors) => {
+        if (Object.values(formErrors).length === 0) {
+            const newBook = await bookService.create(data);
 
-        setBooks(state => [newBook, ...state]);
-        setFilteredBooks(books);
+            setBooks(state => [newBook, ...state]);
+            setFilteredBooks(books);
 
-        navigate('/catalog');
+            resetForm();
+
+            navigate('/catalog');
+        } else {
+            alert('Wrong form input!');
+            return;
+        }
     };
 
-    const onBookEditSubmit = async (values) => {
-        const result = await bookService.edit(values._id, values);
+    const onBookEditSubmit = async (values, formErrors) => {
+        if (Object.values(formErrors).length === 0) {
+            const result = await bookService.edit(values._id, values);
 
-        setBooks(state => state.map(x => x._id === values._id ? result : x));
-        setFilteredBooks(books);
+            setBooks(state => state.map(x => x._id === values._id ? result : x));
+            setFilteredBooks(books);
 
-        navigate(`/catalog/${values._id}`);
+            resetForm();
+
+            navigate(`/catalog/${values._id}`);
+        } else {
+            alert('Wrong form input!');
+            return;
+        }
     };
 
     const deleteBook = (bookId) => {
         setBooks(state => state.filter(x => x._id !== bookId));
-     
+
         setFilteredBooks(books);
     };
 

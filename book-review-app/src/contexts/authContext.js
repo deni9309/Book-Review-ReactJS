@@ -2,6 +2,7 @@ import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useLocalStorage } from "../hooks/useLocalStorage";
+import { useForm } from "../hooks/useForm";
 import { authServiceFactory } from '../services/authService';
 
 export const AuthContext = createContext();
@@ -11,6 +12,7 @@ export const AuthProvider = ({
 }) => {
     const [auth, setAuth] = useLocalStorage('auth', {});
     const navigate = useNavigate();
+    const { resetForm } = useForm();
     const authService = authServiceFactory(auth.accessToken);
 
     const onLoginSubmit = async (data) => {
@@ -18,14 +20,17 @@ export const AuthProvider = ({
             const result = await authService.login(data);
             setAuth(result);
 
+            resetForm();
+
             navigate('/catalog');
         } catch (error) {
             console.log(error);
+            alert("Email and Password don't match!")
             throw error;
         }
     };
 
-    const onRegisterSubmit = async (values) => {
+    const onRegisterSubmit = async (values, formErrors) => {
         const { confirmPassword, ...registerData } = values;
 
         if (confirmPassword !== registerData.password) {
@@ -34,13 +39,19 @@ export const AuthProvider = ({
         }
 
         try {
-            const result = await authService.register(registerData);
-            setAuth(result);
+            if (Object.values(formErrors).length === 0) {         
+                const result = await authService.register(registerData);
+                if (result.status === 409) {
+                    throw new Error(result);
+                }
 
-            navigate('/catalog');
-        } catch (error) {
-            console.log(error);
-            throw error;
+                setAuth(result);
+                resetForm();
+
+                navigate('/catalog');
+            }
+        } catch (err) {
+            alert(err.message);
         }
     };
 
